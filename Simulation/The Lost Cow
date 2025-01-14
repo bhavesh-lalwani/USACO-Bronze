@@ -175,11 +175,7 @@ void solve(){
     int move = 0, ans = 0, oldPosition = x;
     while(true){
         int newPosition = x + (move&1 ? -(1 << move) : (1 << move));
-        if(newPosition <= y && y <= x){
-            ans += abs(y - oldPosition);
-            break;
-        }
-        else if(newPosition >= y && y >= x){
+        if((newPosition <= y && y <= x) || (newPosition >= y && y >= x)){
             ans += abs(y - oldPosition);
             break;
         }
